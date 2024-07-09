@@ -26,8 +26,11 @@ RUN cp --backup=t /etc/skel/.bashrc ~user/.bashrc &&\
 
 WORKDIR /home/user/app
 
+CMD ["bash", "-c", "npm init -y &&\
+    # npm install -D $(cat packages-dev.txt) &&\
+    npm install $(cat packages.txt) &&\
+    /bin/bash"]
+
 RUN chown -R user:1000 /home/user/app
 
-CMD ["bash", "-c", "npm init -y && npm install axios && /bin/bash"]
-
-USER user
+# USER user

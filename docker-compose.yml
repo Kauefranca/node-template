@@ -4,6 +4,8 @@ services:
     build: .
     volumes:
       - ./app:/home/user/app
+      - ./packages.txt:/home/user/app/packages.txt
+      # - ./packages-dev.txt:/home/user/app/packages-dev.txt
     tty: True
     container_name: node22.4-dev-container
     #ports:

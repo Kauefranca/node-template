@@ -3,3 +3,4 @@ jspm_packages/
 .npm
 .env*
 package*.json
+app/packages*.txt
